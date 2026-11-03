@@ -2,6 +2,8 @@
 
 Ein kleiner Browser-Konverter für Bilder und GIFs auf SSD1306-OLEDs mit einem Wemos D1 mini (ESP8266). Die Seite wandelt Bilddateien in monochrome Frames um und erstellt daraus einen Arduino-Sketch.
 
+Die Bildoptimierung bietet drei Modi: klare Kanten ohne Rasterung für Schrift und Logos, Floyd–Steinberg-Dithering für mehr Detail in Fotos sowie ein festes 4×4-Raster für GIFs. Mit Kontrast, Bildanpassung und Abspieltempo kannst du die Vorschau weiter abstimmen.
+
 ## Online mit GitHub Pages
 
 1. Erstelle ein GitHub-Repository.
