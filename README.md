@@ -31,3 +31,31 @@ Dann im Browser <http://127.0.0.1:8080> öffnen.
 - Für GIF-Import einen aktuellen Chrome- oder Edge-Browser mit `ImageDecoder` / WebCodecs verwenden.
 
 Lange GIFs können auf die ausgewählte Frame-Anzahl begrenzt werden. Die erzeugten Frames liegen im Sketch, daher kann ein sehr langes GIF viel Flash-Speicher belegen.
+
+## PlatformIO in VS Code
+
+Der erzeugte Code ist auch mit PlatformIO nutzbar. Erstelle in VS Code ein PlatformIO-Projekt mit dem Board **WEMOS D1 mini** und Framework **Arduino**. Kopiere den generierten Sketch in `src/main.cpp` und ersetze dort den Inhalt der Datei.
+
+Für ein 128 × 64 OLED verwende diese `platformio.ini`:
+
+```ini
+[env:d1_mini]
+platform = espressif8266
+board = d1_mini
+framework = arduino
+lib_deps =
+  adafruit/Adafruit SSD1306
+  adafruit/Adafruit GFX Library
+```
+
+Für das 64 × 48 Wemos OLED-Shield nimm stattdessen diese Bibliothek:
+
+```ini
+[env:d1_mini]
+platform = espressif8266
+board = d1_mini
+framework = arduino
+lib_deps = olikraus/U8g2
+```
+
+PlatformIO lädt die in `lib_deps` angegebenen Bibliotheken beim Build. Board-ID `d1_mini` ist die PlatformIO-Kennung für den Wemos D1 mini. [PlatformIO: Wemos D1 mini](https://docs.platformio.org/en/stable/boards/espressif8266/d1_mini.html) · [PlatformIO: Bibliotheksabhängigkeiten](https://docs.platformio.org/en/latest/projectconf/sections/env/options/library/lib_deps.html)
