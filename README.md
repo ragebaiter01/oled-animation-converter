@@ -4,7 +4,7 @@ Ein kleiner Browser-Konverter für Bilder und GIFs auf monochromen OLEDs. Die Se
 
 Das `favicon.png` im Projektstamm ist das Tab-Icon der Webseite und muss beim Upload mit übernommen werden.
 
-Die Bildoptimierung bietet drei Modi: klare Kanten ohne Rasterung für Schrift und Logos, Floyd–Steinberg-Dithering für mehr Detail in Fotos sowie ein festes 4×4-Raster für GIFs. Mit Kontrast, Bildanpassung und Abspieltempo kannst du die Vorschau weiter abstimmen.
+Die Bildoptimierung bietet drei Modi: klare Kanten ohne Rasterung für Schrift und Logos, zeilenwechselndes Floyd–Steinberg-Dithering für feine Fotodetails sowie ein festes 8×8-Raster mit mehr Helligkeitsstufen für GIFs. Mit Kontrast, Bildanpassung und Abspieltempo kannst du die Vorschau weiter abstimmen.
 
 Optional kann der Sketch die Uhrzeit sowie einen eigenen Text am unteren Displayrand anzeigen. Eigener Text funktioniert auch ohne Bild und Uhr. Für die Uhr braucht das Board WLAN und Internetzugang zum NTP-Zeitserver. Nach dem Erzeugen des Codes die Platzhalter `YOUR_WIFI_SSID` und `YOUR_WIFI_PASSWORD` ersetzen.
 
