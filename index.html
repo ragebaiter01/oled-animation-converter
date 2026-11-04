@@ -56,7 +56,7 @@ $('customText').addEventListener('input',updatePreviewControls);
 $('berlinClock').addEventListener('change',updatePreviewControls);
 $('resolution').addEventListener('change',updatePreviewControls);
 $('imageMode').onchange=()=>{$('imageModeHint').textContent=modeHint();if(selectedFile)processFile(selectedFile)};
-$('clockStyle').onchange=()=>{if(frames.length){play();generateCode()}else if($('berlinClock').checked){drawClockOnlyPreview();if(!$('codePanel').classList.contains('hidden'))generateCode()}};
+$('clockStyle').onchange=()=>{$('berlinClock').checked=true;$('convert').disabled=false;setStatus('clockOnlyReady');if(frames.length){play();generateCode()}else{drawClockOnlyPreview();if(!$('codePanel').classList.contains('hidden'))generateCode()}updatePreviewControls()};
 $('customText').oninput=()=>{if(frames.length)play();else if($('berlinClock').checked)drawClockOnlyPreview();else if($('customText').value.trim())drawClockOnlyPreview();else{ctx.clearRect(0,0,canvas.width,canvas.height);$('previewEmpty').classList.remove('hidden');$('previewState').textContent=t('waiting');$('previewState').classList.remove('active')}if(!$('codePanel').classList.contains('hidden'))generateCode();$('convert').disabled=!(frames.length||$('berlinClock').checked||$('customText').value.trim())};
 $('customText').oninput=(()=>{const original=$('customText').oninput;return()=>{original();canvas.classList.toggle('custom-draggable',!!$('customText').value.trim())}})();
 $('customTextSize').oninput=()=>{$('customTextSizeValue').textContent=$('customTextSize').value+'×';if(frames.length)show(frames[currentFrame]);else if($('customText').value.trim()||$('berlinClock').checked)drawClockOnlyPreview();if(!$('codePanel').classList.contains('hidden'))generateCode()};
